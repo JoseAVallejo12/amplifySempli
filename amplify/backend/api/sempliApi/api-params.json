@@ -1,0 +1,92 @@
+{
+    "paths": [
+        {
+            "name": "/user/rnew",
+            "lambdaFunction": "randomUser",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/user/rnew"
+        },
+        {
+            "name": "/user/closter",
+            "lambdaFunction": "closterUser",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/user/closter"
+        },
+        {
+            "name": "/user/db/get",
+            "lambdaFunction": "userReadDB",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/user/db/get"
+        },
+        {
+            "name": "/user/db/save/{user}",
+            "lambdaFunction": "userWriteDB",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/user/db/save/*"
+        }
+    ],
+    "resourceName": "sempliApi",
+    "apiName": "sempliApi",
+    "functionArns": [
+        {
+            "lambdaFunction": "randomUser"
+        },
+        {
+            "lambdaFunction": "closterUser"
+        },
+        {
+            "lambdaFunction": "userReadDB"
+        },
+        {
+            "lambdaFunction": "userWriteDB"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-sempli-dev-140646-authRole",
+        "unAuthRoleName": "amplify-sempli-dev-140646-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "randomUser",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "closterUser",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "userReadDB",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "userWriteDB",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
